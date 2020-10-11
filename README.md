@@ -1,5 +1,10 @@
 # Building Instagram Bot for Auto-Following
 
+To clone this git, simply run the following command on your terminal
+```
+git clone https://github.com/bivanalhar/instagram_bot.git
+```
+
 This file will contain a guideline on how to operate the code successfully. First of all, note that you need to install all the necessary libraries enlisted inside the file named ```requirements.txt```. The method on doing that is very simple, which is to run the following command line into your terminal
 
 ```
