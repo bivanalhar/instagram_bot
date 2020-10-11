@@ -2,12 +2,11 @@ from instapy import InstaPy
 import time
 import sys
 
-if len(sys.argv) <= 1:
+if len(sys.argv[1:-1]) == 0:
     print("need to input all usernames that is to be targeted on")
     sys.exit(0)
 
 username = sys.argv[1:-1]
-print(username)
 
 try:
     followCount = int(sys.argv[-1])
