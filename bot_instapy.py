@@ -14,17 +14,23 @@ except ValueError:
     print("the last input of the command line should be a valid integer")
     sys.exit(0)
 
-session1 = InstaPy(username="maichaelrich001@yahoo.com", password="michael.richimon1")
-session1.login()
+userFile = open("username.txt", "r", encoding='utf-8')
+userPass = {}
+for line in userFile.readlines():
+    tabs = line.strip().split("\t")
+    if len(tabs) < 2 :
+        continue
 
-session2 = InstaPy(username="maichaelrich002@yahoo.com", password="michael.richimon1")
-session2.login()
+    userPass[tabs[0]] = tabs[1]
+
+sessions = []
+for user, password in userPass:
+    sess = InstaPy(username = user, password = password)
+    sess.login()
+    sessions.append(sess)
 
 while True:
-    start = time.time()
-    session1.follow_user_followers(username, amount = 15, sleep_delay=1)
-    print("{} seconds".format(time.time() - start))
-
-    start = time.time()
-    session2.follow_user_followers(username, amount= 15, sleep_delay=1)
-    print("{} seconds".format(time.time() - start))
+    for sess in sessions:
+        start = time.time()
+        sess.follow_user_followers(username, amount = followCount, sleep_delay = 1)
+        print("Elapsed Time : {} seconds".format(time.time() - start))

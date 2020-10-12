@@ -13,6 +13,14 @@ pip3 install -r requirements.txt
 
 Afterwards, the code implicitly uses a library named ```Selenium```, which requires Firefox as a browser in which the code will operate. Make sure to have Firefox installed in your computer (I forgot precisely the minimum version required for this Firefox, therefore just try to install the newest version of it. Or, you may just simply update your existing Firefox into the newest one).
 
+Before running the code, you need to make sure that the file named ```username.txt``` exists within the same folder as ```bot_instapy.py```. The format of each line inside ```username.txt``` should be like the following
+
+```
+<username1>\t<password1>
+<username2>\t<password2>
+...
+```
+
 After that, we may simply run the following code
 
 ```
