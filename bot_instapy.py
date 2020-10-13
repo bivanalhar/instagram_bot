@@ -17,15 +17,16 @@ except ValueError:
 userFile = open("username.txt", "r", encoding='utf-8')
 userPass = {}
 for line in userFile.readlines():
-    tabs = line.strip().split("\t")
+    tabs = line.strip().split()
     if len(tabs) < 2 :
         continue
 
     userPass[tabs[0]] = tabs[1]
 
 sessions = []
-for user, password in userPass:
-    sess = InstaPy(username = user, password = password)
+
+for user in userPass:
+    sess = InstaPy(username = user, password = userPass[user])
     sess.login()
     sessions.append(sess)
 
