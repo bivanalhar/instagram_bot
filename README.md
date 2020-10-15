@@ -24,27 +24,29 @@ Before running the code, you need to make sure that the file named ```username.t
 After that, we may simply run the following code
 
 ```
-python3 bot_instapy.py <list of all targeted usernames> <number of accounts to follow>
+python3 bot_instapy.py <filename of usernames> <filename of target users> <number of followers>
 ```
+
+By default, the filename for usernames is ```username.txt``` and the filename for target users is ```target.txt```
 
 Here, note that those 2 fields **need to be filled in**, or otherwise you will encounter an error that will result in the early termination of this program. Several things to be noted on are the followings:
 1. There should be **at least** 1 username that is to be followed
 2. The number of accounts to follow **should be an integer**
 
-For example, suppose that you want to target an account with username ```gantengbanget``` and you would like to fetch 10 of its followers. Therefore, you need to input the following command
+For now, the default of the valid command line should be the following:
 ```
-python3 bot_instapy.py gantengbanget 10
+python3 bot_instapy.py username.txt target.txt 100
 ```
 
 Several mistakes that may occur are the following:
 1. In the following case, user did not input the usernames to be targeted on
 ```
 python3 bot_instapy.py 20
-need to input all usernames that is to be targeted on
+need to include file of targeted users, file of usernames we would like to handle and number of followers
 ```
 
 2. In the following case, the number of accounts to follow is not a valid integer
 ```
 python3 bot_instapy.py qabdjwqbdioq uwjwq782nb
-the last input of the command line should be a valid integer
+the last input is the number of followers, and thus should be a valid integer
 ```
